@@ -10,6 +10,6 @@ app.get('/', (req, res) => {
 app.get('/test', (req, res) => {
   res.json({"foo": "bar"})
 })
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
-})
+
+app.listen(process.env.PORT || 3000, 
+	() => console.log("Server is running..."));
