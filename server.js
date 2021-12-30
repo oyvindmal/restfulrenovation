@@ -42,14 +42,14 @@ app.get('/tomorrow', (req, res) => {
     today.setHours(0,0,0,0);
     tomorrow.setHours(0,0,0,0);
     if(test2.toDateString() === today.toDateString()) {
-      res.send(true);
+      res.json({"result" : true});
     }
      if(test2.toDateString() === tomorrow.toDateString()) {
-      res.send(true);
+      res.json({"result" : true});
     }
     
     });
-  res.send(false);
+  res.json({"result" : false});
 })
 /*app.listen(3000, 
 	() => console.log("Server is running..."));*/
