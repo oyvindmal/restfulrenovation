@@ -1,6 +1,10 @@
 module.exports.data = {
   "routedata": [
     {
+      "date": "2021-12-31",
+      "route": "R3"
+    },
+    {
       "date": "2022-01-05",
       "route": "R3"
     },
