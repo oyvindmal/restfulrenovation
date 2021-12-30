@@ -31,8 +31,15 @@ app.get('/test', (req, res) => {
 app.get('/tomorrow', (req, res) => {
  var today = new Date();
   var tomorrow = today.addDays(1);
-  
-  
+  var date = new Date();
+  var response = 
+  {
+    "name": "Renovasjon",
+    "state": {
+        "open": "true",
+        "timestamp": date
+    }
+};
 
   var routeData = data.data.routedata;
   
@@ -42,14 +49,16 @@ app.get('/tomorrow', (req, res) => {
     today.setHours(0,0,0,0);
     tomorrow.setHours(0,0,0,0);
     if(test2.toDateString() === today.toDateString()) {
-      res.json({"result" : true});
+      res.json(response);
     }
      if(test2.toDateString() === tomorrow.toDateString()) {
-      res.json({"result" : true});
+      res.json(response);
     }
     
     });
-  res.json({"result" : false});
+    
+    response.state.open = "false";
+  res.json(response);
 })
 /*app.listen(3000, 
 	() => console.log("Server is running..."));*/
